@@ -80,7 +80,7 @@
 		}
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 	.coupon{
 		.classA{
 			height: 100px;

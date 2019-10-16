@@ -49,18 +49,21 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
   .helloWord{
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     margin: auto;
     ul{
         position: fixed;
         bottom:-15px;
-        width: 600px;
+        max-width: 600px;
+        width: 100%;
         padding: 0;
         list-style-type: none;
         display: flex;
         justify-content: space-around;
         background-color: #333333;
         li{
+            width: 25%;
             text-align: center;
             margin-top: 5px;
             margin-bottom: 5px;
@@ -70,6 +73,7 @@
                 height: 25px;
             } 
             a{
+                width: 25%;
                 color: #ffffff;
                 text-decoration: none;
                 font-size: 10px;
@@ -77,33 +81,9 @@
         }
     }
     .window{
-        width: 600px;
+        max-width: 600px;
+        width: 100%;
         overflow: auto;
     }
   }
-  // .helloWord ul{
-  //   list-style-type: none;
-  //   display: flex;
-  //   justify-content: space-around;
-  //   background-color: #333333;
-  // }
-  // .helloWord ul img{
-  //   margin: auto;
-  //   width: 25px;
-  //   height: 25px;
-  // }
-  // .helloWord ul li{
-  //   text-align: center;
-  //   margin-top: 5px;
-  //   margin-bottom: 5px;    
-  // }
-  // .helloWord ul li a{
-  //   color: #ffffff;
-  //   text-decoration: none;
-  //   font-size: 10px;
-  // }
-  // .window{
-  //   height: 85vh;
-  //   overflow: auto;
-  // }
 </style>

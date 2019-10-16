@@ -7,7 +7,7 @@
 		</header>
 		<section>
 			<div v-for='(i,n) in shoesclass' :key='n' @click='toPay(i)'>
-				<img :src="i.imgs" alt="">
+				<div><img :src="i.imgs" alt=""></div>
 				<p>{{i.title}}</p>
 				<span>&yen;{{i.newprice}}</span>
 				<span class="older">{{i.oldprice}}</span>
@@ -119,57 +119,67 @@
 </script>
 <style lang="less" scoped>
 	.shoes{
+		max-width: 600px;
+		width: 100%;
 		header{
 			position: fixed;
 			top: 0px;
 			background-color: white;
-			width: 600px;
-			height: 50px;
+			max-width: 600px;
+			width: 100%;
+			height: 3rem;
 			display: flex;
 			justify-content: space-between;
 			div{
-				width: 50px;
-				height: 50px;
+				width: 3rem;
+				height: 3rem;
 				img{
 					margin-top: 10px;
-					width: 30px;
-					height:30px;
+					width: 1.5rem;
+					height:1.5rem;
 				}
 			}
 			.headline{
-				width: 140px;
-				height:40px;
-				line-height: 40px;
-				font-size: 30px;
+				width: 6rem;
+				height:6rem;
+				font-size: 1rem;
 				img{
-					width: 30px;
-					height: 30px;
+					width: 1.5rem;
+					height: 1.5rem;
 					margin-bottom: -5px;
 					margin-right: 10px;
 				}
 			}
 		}
 		section{
-			width:600px;
-			padding-top: 20px;
+			max-width:600px;
+			width: 100%;
 			background-color: #e7e7e7;
 			display: flex;
-			margin-top: 50px;
-			margin-bottom: 50px;
+			padding-top:3rem; 
+			margin-bottom: 4rem;
 			justify-content: space-around;
 			flex-wrap: wrap;
-			div{
-				width: 250px;
-				height: 350px;
+			border: 1px solid #cccccc;
+			&>div{
+				max-width: 250px;
+				width: 40%;
+				height: 20rem;
 				background-color: white;
 				margin-bottom: 20px;
 				text-align: center;
 				span{
 					color: orange;
 				}
-				img{
-					width:250px;
-					height: 250px;
+				&>div{
+					width: 100%;
+					text-align: center;
+					height: 15rem;
+					line-height: 15rem;
+					img{
+						width:70%;
+						max-height: 15rem;
+					}
 				}
 				.older{
 					text-decoration: line-through;

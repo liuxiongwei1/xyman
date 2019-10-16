@@ -22,7 +22,7 @@
 		}
 }
 </script>
-<style lang='less'>
+<style lang='less' scoped>
 	.revisepassword{
 		width: 800px;
 		margin: auto;

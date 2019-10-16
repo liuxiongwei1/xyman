@@ -4,11 +4,11 @@
 		  <el-input :placeholder="input3" v-model="input3" class="input-with-select">
 		    <el-button slot="append"icon="el-icon-search"></el-button>
 		  </el-input>
+		  <section>
+		  	<router-link tag='div' to='/goods'>商品</router-link>
+		  	<router-link tag='div' to='/brand'>品牌</router-link>
+		  </section>
 		</header>
-		<section>
-			<router-link tag='div' to='/goods'>商品</router-link>
-			<router-link tag='div' to='/brand'>品牌</router-link>
-		</section>
 		<footer><router-view></router-view></footer>	
 	</div>
 </template>
@@ -39,17 +39,28 @@
 			border-bottom: orange 4px solid;
 			color:orange;
 		}
+		header{
+			position:fixed;
+			max-width: 600px;
+			width: 100%;
+			top: -15px;
+			left: 50%;
+			transform: translate(-50%);
+			background-color: white;
+		}
 		section{
 			display: flex;
 			justify-content: space-around;
 			div{
-				font-size: 40px;
+				font-size:16px;
 				width: 50%;
+				height: 40px;
+				line-height: 40px;
 				text-align: center;
 			}
 		}
 		footer{
-			height: 90vh;
+			margin-top: 100px;
 			overflow: auto;
 		}
 	}

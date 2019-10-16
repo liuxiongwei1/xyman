@@ -12,13 +12,14 @@
 				<router-link tag='div' to='/icogoods' class='more'>更多<img src="/static/images/brand/more.png" alt=""></router-link>
 			</div>
 			<div class='goodsclass'>
-				<div v-for='i in m.goods' class="goodso" :key='i.goodssrc'>
+				<div v-for='i in m.goods' class="goodso">
 					<div><img :src="i.goodssrc" alt=""></div>
 					<div>{{i.goodsinf}}</div>
 					<div class='goodsprice'>{{i.price}}</div>
 				</div>
 			</div>
 		</div>
+		<div class="di"></div>
 	</div>
 </template>
 <script>
@@ -45,6 +46,16 @@
 								goodssrc:'/static/images/brand/03.jpg',
 								goodsinf:'耳机',
 								price:'￥68'
+							},
+							{
+								goodssrc:'/static/images/brand/03.jpg',
+								goodsinf:'耳机',
+								price:'￥90'
+							},
+							{
+								goodssrc:'/static/images/brand/03.jpg',
+								goodsinf:'耳机',
+								price:'￥90'
 							}
 						],
 					},
@@ -89,6 +100,21 @@
 								goodssrc:'/static/images/brand/03.jpg',
 								goodsinf:'耳机3',
 								price:'￥128'
+							},
+							{
+								goodssrc:'/static/images/brand/02.jpg',
+								goodsinf:'耳机2',
+								price:'￥28'
+							},
+							{
+								goodssrc:'/static/images/brand/02.jpg',
+								goodsinf:'耳机2',
+								price:'￥28'
+							},
+							{
+								goodssrc:'/static/images/brand/02.jpg',
+								goodsinf:'耳机2',
+								price:'￥28'
 							}
 						],
 					},
@@ -111,6 +137,11 @@
 								goodssrc:'/static/images/brand/03.jpg',
 								goodsinf:'耳机',
 								price:'￥90'
+							},
+							{
+								goodssrc:'/static/images/brand/03.jpg',
+								goodsinf:'耳机',
+								price:'￥90'
 							}
 						],
 					}
@@ -119,59 +150,82 @@
 		}
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 	.brand{
-		margin-bottom: 50px;
-		.goodstitle{
-			display: flex;
-			.ico{
-				width: 50px;
-				height: 50px;
-				img{
-					width: 50px;
-					height: 50px;
-				}
-			}
-			.ico+div{
-				width:500px;
-				.detailed{
-					div{
-						color: #282923;
+		max-width: 600px;
+		width: 100%;
+		&>div{
+			max-width: 600px;
+			width:100%;
+			.goodstitle{
+				display: flex;
+				.ico{
+					width: 3rem;
+					border: 1px solid #dacfcc;
+					img{
+						width: 3rem;
 					}
 				}
-				div{
+				.ico+div{
 					overflow: hidden;
 					text-overflow: ellipsis;
-					white-space: nowrap;
-					color: #cccccc;
-					width: 480px;
+					white-space:nowrap;
+					.detailed{
+						height: 50%;
+						line-height: 200%;
+						font-size: 0.6rem;
+					}
+					.detailed+div{
+						font-size: 0.6rem;
+						height: 50%;
+						line-height: 200%;
+						width: 100%;
+						color: #dacfcc;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space:nowrap;
+					}
+				}
+				&>div{
+					&:last-child{
+						width: 10rem;
+						text-align: right;
+						font-size: 0.8rem;
+						color: #dacfcc;
+						img{
+							width: 1.3rem;
+						}
+					}
 				}
 			}
-			.more{
-				color: #cccccc;
-				width: 100px;
-				height: 30px;
-				line-height: 30px;
-				img{
-					margin-bottom: -2px;
-					width: 30px;
-					height: 20px;
+			.goodsclass{
+				display: flex;
+				justify-content:flex-start;
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+				overflow: auto;
+				border-bottom: 2px solid #d5d5d5;
+				&>div{
+					width: 10rem;
+					div{
+						width: 10rem;
+						text-align: center;
+						&:first-child{
+							width: 10rem;
+							img{
+								width: 8rem;
+								height: 8rem;
+							}
+						}
+					}
+					.goodsprice{
+						color: orange;
+					}
 				}
 			}
 		}
-		.goodsclass{
-			display: flex;
-			div{
-				text-align: center;
-			}
-			img{
-				width: 150px;
-				height: 150px;
-			}
-			.goodsprice{
-				text-align: center;
-				color: orange;
-			}
+		.di{
+			height: 50px;
 		}
 	}
 </style>

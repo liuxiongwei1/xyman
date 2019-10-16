@@ -112,7 +112,7 @@
 		}
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 	.shopping{
 		width: 600px;
 		margin: auto;
@@ -120,7 +120,7 @@
 			position: fixed;
 			top: 0px;
 			background-color: white;
-			width: 600px;
+			max-width: 600px;
 			height: 50px;
 			display: flex;
 			justify-content: space-between;

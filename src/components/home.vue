@@ -194,7 +194,7 @@
 <style scoped lang="less">
 	.home{
 		.classB{
-			height:300px;
+			min-height:200px;
 			transition:height 1s linear;
 		}
 		.classA{
@@ -203,12 +203,10 @@
 		}
 		div{
 			header{
-				width: 200px;
-				margin: auto;
+				max-width: 100%;
+				text-align: center;
 				img{
-					width: 200px;
-					height: 200px;
-					margin: auto;
+					max-width: 100px;
 				}
 			}
 			.title{
@@ -227,19 +225,20 @@
 					color: white;
 					background-color: orange;
 					border:none;
+					height: 30px;
 					width: 100px;
-					font-size: 17px;
+					font-size: 16px;
 				}
 				s{
 					color: orange;
 				}
 				.heart{
-					height: 50px;
-					width: 70px;
+					height: 30px;
+					width: 50px;
 					border:1px solid red;
 					img{
-						height: 40px;
-						width: 40px;
+						height: 30px;
+						width: 30px;
 						margin-top: 5px;
 						margin-left: 15px;
 					}

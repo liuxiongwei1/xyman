@@ -406,7 +406,7 @@
 		}
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 	.el-carousel__item div{
 		margin: auto;
 	    width: 200px;
@@ -429,7 +429,8 @@
 	  }
 	.lookgoods{
 		position: relative;
-		width: 600px;
+		max-width: 600px;
+		width: 100%;
 		margin: auto;
 		overflow: hidden;
 		.classB{
@@ -524,35 +525,33 @@
 				}
 			}
 		}
-		header{
+		&>header{
 			position: fixed;
-			top: 0;
-			left: 50%;
-			width: 600px;
-			z-index: 3;
-			transform: translate(-50%);
-			height: 60px;
-			display: flex;
+			top: 0px;
 			background-color: white;
+			max-width: 600px;
+			width: 100%;
+			height: 3rem;
+			display: flex;
 			justify-content: space-between;
 			div{
-				width: 50px;
-				height: 50px;
+				width: 3rem;
+				height: 3rem;
 				img{
-					margin-top: 20px;
-					width: 30px;
-					height:30px;
+					margin-top: 10px;
+					width: 1.5rem;
+					height:1.5rem;
 				}
 			}
 			.headline{
-				width: 220px;
-				height:40px;
-				line-height: 60px;
-				font-size: 30px;
+				width:6.5rem;
+				height:6rem;
+				font-size: 1rem;
 				img{
-					width: 30px;
-					height: 30px;
+					width: 1.5rem;
+					height: 1.5rem;
 					margin-bottom: -5px;
+					margin-right: 10px;
 				}
 			}
 		}
@@ -564,17 +563,16 @@
 			font-size: 25px;
 		}
 		.goodsinfor{
-			width: 500px;
-			height: 500px;
+			width: 100%;
 			margin: auto;
 			img{
 				margin-top: 40px;
-				width: 500px;
-				height:500px;
+				width: 90%;
 			}
 		}
 		section{
-			width: 600px;
+			max-width: 600px;
+			width: 100%;
 			margin:auto;
 			margin-bottom: 50px;
 			h4{
@@ -649,7 +647,8 @@
 		}
 		.goodsStyle{
 			position: absolute;
-			width: 600px;
+			max-width: 600px;
+			width: 100%;
 			transition: width 1s;
 			// height: 100%;
 			left: 0;
@@ -657,6 +656,36 @@
 			overflow: hidden;
 			background-color: white;
 			z-index: 4;
+			&>header{
+				position: fixed;
+				top: 0px;
+				background-color: white;
+				max-width: 600px;
+				width: 100%;
+				height: 3rem;
+				display: flex;
+				justify-content: space-between;
+				div{
+					width: 3rem;
+					height: 3rem;
+					img{
+						margin-top: 10px;
+						width: 1.5rem;
+						height:1.5rem;
+					}
+				}
+				.headline{
+					width:2rem;
+					height:6rem;
+					font-size: 1rem;
+					img{
+						width: 1.5rem;
+						height: 1.5rem;
+						margin-bottom: -5px;
+						margin-right: 10px;
+					}
+				}
+			}
 			header{
 				height: 50px;
 				overflow: hidden;

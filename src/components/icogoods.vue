@@ -52,7 +52,7 @@
 		}
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 	.icogoods{
 		header{
 			width: 800px;
