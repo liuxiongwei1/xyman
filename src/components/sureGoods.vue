@@ -76,9 +76,10 @@
 			},
 			disappear(){
 				var arr=JSON.parse(localStorage.getItem('shopping'));
-				for(var a in arr){
+				for(var a=0;a<arr.length;a++){
 					if(arr[a].pitch==arr[a].pitch1){
 						arr.splice(arr[a],1)
+						a--;
 						localStorage.setItem('shopping',JSON.stringify(arr));
 					}
 				}

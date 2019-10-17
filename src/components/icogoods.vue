@@ -30,7 +30,7 @@
 					{
 						imgs:'/static/images/icogoods/01.jpg',
 						title:'耳机 米色',
-						newprice:'￥2198',
+						newprice:'2198',
 						content:'纯粹又精湛的大师级作品',
 						oldprice:'2944',
 						heartsrc:'/static/images/home/heart2.svg',
@@ -44,7 +44,7 @@
 					{
 						imgs:'/static/images/icogoods/02.jpg',
 						title:'耳机 自然灰色',
-						newprice:'￥1198',
+						newprice:'1198',
 						content:'纯粹又精湛的大师级作品',
 						oldprice:'2944',
 						heartsrc:'/static/images/home/heart2.svg',
@@ -58,7 +58,7 @@
 					{
 						imgs:'/static/images/icogoods/03.jpg',
 						title:'耳机 黑色',
-						newprice:'￥1498',
+						newprice:'1498',
 						content:'纯粹又精湛的大师级作品',
 						oldprice:'2944',
 						heartsrc:'/static/images/home/heart2.svg',
@@ -72,7 +72,7 @@
 					{
 						imgs:'/static/images/icogoods/01.jpg',
 						title:'耳机 米色',
-						newprice:'￥2198',
+						newprice:'2198',
 						content:'纯粹又精湛的大师级作品',
 						oldprice:'2944',
 						heartsrc:'/static/images/home/heart2.svg',
