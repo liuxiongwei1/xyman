@@ -54,7 +54,9 @@
     margin: auto;
     ul{
         position: fixed;
-        bottom:-15px;
+        bottom:-1rem;
+        right: -50%;
+        transform: translate(-50%);
         max-width: 600px;
         width: 100%;
         padding: 0;
