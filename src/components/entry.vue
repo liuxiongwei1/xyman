@@ -58,40 +58,45 @@
 		}
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 	.entry{
 		height: 100vh;
 		background-image:url(/static/images/entry/2.png);
 		background-repeat: no-repeat;
-		background-size: 100vw 100vh; 
+		background-size: 100% 100%; 
 		header{
-			width: 700px;
+			max-width: 600px;
+			width: 90%;
 			color:white;
 			margin: auto;
-			padding-top: 20px;
-			font-size: 20px;
+			padding-top: 1.2rem;
+			font-size: 1.2rem;
 		}
 		header+div{
-			width: 100px;
-			height: 100px;
+			width: 4rem;
+			height: 4rem;
 			margin: auto;
-			margin-top: 50px;
+			margin-top: 3rem;
 			img{
-				width: 100px;
-				height: 100px;
+				width: 4rem;
+				height: 4rem;
 			}
 		}
 		ul{
+			margin: 0;
+			padding: 0;
 			list-style-type: none;
 			li{
-				width: 600px;
+				max-width: 600px;
+				width: 90%;
 				margin: auto;
 				margin-top: 40px;
 				text-align: center;
 				input{
 					font-size: 20px;
-					width: 600px;
-					height: 60px;
+					max-width: 600px;
+					width: 100%;
+					height: 3rem;
 					text-align:center;
 				}
 				&:last-child input{
@@ -107,23 +112,28 @@
 		}
 		ul+div{
 			margin: auto;
-			width: 600px;
+			max-width: 600px;
+			width: 90%;
 			display: flex;
-			justify-content: space-between;
-			margin-bottom: 40px;
+			justify-content: space-around;
+			margin-bottom: 2rem;
 			div{
 				color:#7d7c7c;
-				width: 100px;
+				width:5rem;
 				text-align: right;
 			}
 		}
 		footer{
-			width: 500px;
+			max-width: 600px;
+			width: 90%;
 			margin: auto;
 			text-align: center;
 			div{
 				display: inline-block;
 				width: 30px;
+			}
+			img{
+				width: 4rem;
 			}
 		}
 	}

@@ -35,9 +35,9 @@
 		height: 100vh;
 		padding-top: 20px; 
 		.toHome{
-			width: 50px;
-			height: 50px;
-			border-radius:50px;
+			width: 2rem;
+			height: 2rem;
+			border-radius:2rem;
 			background-color: #737373;
 			position: fixed;
 			top:50%;
@@ -45,48 +45,55 @@
 			img{
 				margin-left:1px;
 				margin-bottom: 5px;
-				width: 50px;
-				height: 50px;
+				width: 2rem;
+				height: 2rem;
 			}
 		}
 		header{
+			top: 2rem;
+			background-color: white;
 			max-width: 600px;
-			margin:  auto;
-			height: 50px;
+			width: 90%;
+			height: 2.5rem;
+			margin: auto;
 			display: flex;
 			justify-content: space-between;
-			background-color: white;
 			div{
-				width: 50px;
-				height: 50px;
+				width: 2.5rem;
+				height: 2.5rem;
+				line-height:3rem; 
 				img{
-					margin-bottom: -30px;
-					width: 30px;
-					height:30px;
+					width: 1.5rem;
+					height:1.5rem;
 				}
 			}
 			.headline{
-				width: 140px;
-				height:40px;
-				line-height: 50px;
-				font-size: 30px;
+				width: 6rem;
+				height:2.5rem;
+				line-height: 2.5rem;
+				font-size: 1.3rem;
 				img{
-					width: 30px;
-					height: 30px;
-					margin-bottom: -5px;
-					margin-right: 10px;
+					width: 1.3rem;
+					height: 1.3rem;
+					margin-bottom: -0.25rem;
+					margin-right: 0.2rem;
 				}
+			}
+			.isSure{
+				height: 2rem;
+				width: 2rem;
 			}
 		}
 		ul{
 			max-width: 600px;
+			width: 90%;
 			margin: auto;
 			list-style-type: none;
 			padding: 0;
 			li{
-				height:50px;
-				font-size: 25px;
-				line-height: 50px;
+				height:2.5rem;
+				font-size: 1rem;
+				line-height: 2.5rem;
 				padding-left: 5px;
 				background-color: white;
 				margin-top: 20px;

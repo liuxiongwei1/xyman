@@ -37,24 +37,26 @@
 	*{
 		color:#cea866;
 		text-align: center;
+		margin: 0;
+		padding: 0;
 	}
 	.about{
-		width: 800px;
-		height: 100vh;
+		width:100%;
+		height: 100%;
 		margin: auto;
-		padding-top: 20px; 
+		padding-top: 1.5rem; 
 		background-image: url(/static/images/my/setup/bg.png);
 		background-repeat: no-repeat;
-		background-size: 800px 1000px;
+		background-size: 100% 100%;
 		text-align: center;
 		.toHome{
 			width: 50px;
 			height: 50px;
 			border-radius:50px;
-			background-color: #737373;
+			background-color: #0a0908;
 			position: fixed;
 			top:50%;
-			left: 10px;
+			left: 0%;
 			img{
 				margin-left:1px;
 				margin-bottom: 5px;
@@ -62,39 +64,42 @@
 				height: 50px;
 			}
 		}
-		h4{
-			margin: 5px auto 5px;
-		}
 		article{
-			width: 600px;
+			max-width: 600px;
+			width: 80%;
 			margin: auto;
 			div{
 				display: flex;
 				justify-content: space-between;
 				div{
-					width: 20px;
-					height: 20px;
+					width: 1rem;
+					height: 1rem;
 					img{
-						width: 20px;
-						height: 20px;
+						width: 1rem;
+						height: 1rem;
 					}
 				}
 			}
 		}
 		article+div{
-			margin: 40px auto 20px;
+			margin: 2rem auto 1rem;
+		}
+		h2+div{
+			img{
+				width: 100%;
+			}
 		}
 		footer{
-			margin-top: 30px;
-			font-size: 20px;
+			margin-top: 2rem;
+			font-size: 1rem;
 			div{
 				&:first-child{
 					border-bottom: 1px solid #cea866;
-					height: 30px;
+					height: 1.5rem;
 				}
 				&:last-child{
 					border-top: 1px solid #cea866;
-					padding-top: 2px;
+					padding-top: .5rem;
 				}
 			}
 		}

@@ -16,10 +16,13 @@
 		</div>
 		<div :class="isShow?Yes:No">
 			<h4>选择收藏夹</h4>
-			<input type="text" placeholder="添加收藏夹" v-model='favoriteclass'>
-			<h2 class='add' @click='addfavorite'>
-				<img src="/static/images/home/add.svg" alt="">
-			</h2>
+			<div class='addfavorite'>
+				<input type="text" placeholder="添加收藏夹" v-model='favoriteclass'>
+				<h2 class='add' @click='addfavorite'>
+					<img src="/static/images/home/add.svg" alt="">
+				</h2>
+			</div>
+			
 			<ul >
 				<li v-for='(m,n) in favoriteul' :key='m.name'@click='addFavoriteToClass(m)'>{{m.name}}({{m.inform.length}})</li>
 			</ul>
@@ -194,11 +197,11 @@
 <style scoped lang="less">
 	.home{
 		.classB{
-			min-height:200px;
+			height:10rem;
 			transition:height 1s linear;
 		}
 		.classA{
-			height: 0px;
+			height: 0rem;
 			transition:height 1s linear; 
 		}
 		div{
@@ -225,22 +228,22 @@
 					color: white;
 					background-color: orange;
 					border:none;
-					height: 30px;
-					width: 100px;
-					font-size: 16px;
+					height: 2rem;
+					width: 6rem;
+					font-size: 1rem;
 				}
 				s{
 					color: orange;
 				}
 				.heart{
-					height: 30px;
-					width: 50px;
+					height: 2rem;
+					width: 3rem;
 					border:1px solid red;
+					text-align: center;
+					line-height: 2rem;
 					img{
-						height: 30px;
-						width: 30px;
-						margin-top: 5px;
-						margin-left: 15px;
+						height: 2rem;
+						width: 2rem;
 					}
 				}
 			}
@@ -257,7 +260,8 @@
 		}
 		.favorite+div{
 			overflow: hidden;
-			width: 600px;
+			max-width: 600px;
+			width: 100%;
 			position: absolute;
 			bottom: 0;
 			z-index:20;
@@ -265,39 +269,51 @@
 			transform: translate(-50%);
 			background-color: white;
 			h4{
-				margin-top: 10px;
-				margin-bottom: 5px;
-				font-size: 25px;
+				margin-top: 0.3rem;
+				margin-bottom: 0;
+				font-size: 1.3rem;
 				text-align: center;
 			}
-			input{
-				width:500px;
-				height: 30px;
-				font-size: 20px;
-				line-height: 30px;
-				border:none; 
-				outline: none;
-				margin-left: 10px;
-			}
-			.add{
-				display: inline-block;
-				width: 20px;
-				height: 20px;
-				img{
-					width: 20px;
-					height: 20px;
+			.addfavorite{
+				margin:0;
+				padding: 0;
+				width: 100%;
+				height: 1.5rem;
+				display: flex;
+				justify-content: space-between;
+				input{
+					max-width:500px;
+					height: 2rem;
+					font-size: 1rem;
+					line-height: 2rem;
+					border:none; 
+					outline: none;
+					margin-left: 10px;
+				}
+				.add{
+					margin: 0;
+					padding: 0;
+					width: 1.5rem;
+					height: 1.5rem;
+					margin-right: 1%;
+					img{
+						width: 1.5rem;
+						height: 1.5rem;
+					}
 				}
 			}
 			ul{
+				overflow: auto;
+				width: 100%;
 				padding: 0;
 				list-style-type: none;
 				li{
-					padding-left: 10px;
-					height: 40px;
-					line-height: 40px;
-					font-size: 20px;
-					border-bottom: 1px solid #4d4d4d;
-					border-top: 1px solid #4d4d4d;
+					padding-left: 0.6rem;
+					height: 2.4rem;
+					line-height: 2.4rem;
+					font-size: 1.2rem;
+					border-bottom: 0.01rem solid #4d4d4d;
+					border-top: 0.01rem solid #4d4d4d;
 				}
 			}
 		}

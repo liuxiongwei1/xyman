@@ -12,7 +12,7 @@
 				<ul>
 					<li>{{m.title}}</li>
 					<li></li>
-					<li>数量：<input type="button"value='+':style='{display:buttonArise}'>{{m.num}}<input type="button"value='-':style='{display:buttonArise}'></li>
+					<li>数量：<input type="button"value='+':style='{display:buttonArise}' @click='addnum(m)'>{{m.num}}<input type="button"value='-':style='{display:buttonArise}' @click='reducenum(m)'><div class="delete" @click='deleted(m)' :style='{display:buttonArise}'>删除</div></li>
 					<li>&yen;{{m.newprice}}</li>
 				</ul>
 			</div>
@@ -70,7 +70,6 @@
 			},
 			checkall(){
 				var arr=this.goodsinfor;
-				
 				if(this.all=='/static/images/shopping/nopitch.svg'){
 				this.all='/static/images/shopping/pitch.svg';
 				this.allnum=0;
@@ -98,6 +97,17 @@
 				}
 				
 			},
+			addnum(n){
+				n.num++
+			},
+			reducenum(n){
+				if(n.num){
+					n.num--
+					if(n.num==0){
+						n.num=1
+					}
+				}
+			},
 			buygoods(){
 				var arr1=[];
 				var arr=JSON.parse(localStorage.getItem('shopping'));
@@ -108,109 +118,147 @@
 					}
 				}
 				open("http://localhost:8080/#/sureGoods","_self");
+			},
+			deleted(n){
+				for(var a in this.goodsinfor){
+					if(n.title==this.goodsinfor[a].title){
+						this.goodsinfor.splice(a,1);
+						localStorage.setItem('shopping',JSON.stringify(this.goodsinfor))
+					}
+				}
+				
 			}
 		}
 }
 </script>
 <style lang="less" scoped>
 	.shopping{
-		width: 600px;
+		max-width: 600px;
+		width: 100%;
 		margin: auto;
 		header{
 			position: fixed;
-			top: 0px;
+			top: 0%;
 			background-color: white;
 			max-width: 600px;
-			height: 50px;
+			width: 100%;
+			height: 2.5rem;
 			display: flex;
 			justify-content: space-between;
 			div{
-				width: 50px;
-				height: 50px;
+				width: 2.5rem;
+				height: 2.5rem;
+				line-height:3rem; 
 				img{
-					margin-top: 10px;
-					width: 30px;
-					height:30px;
+					width: 1.5rem;
+					height:1.5rem;
 				}
 			}
 			.headline{
-				width: 140px;
-				height:40px;
-				line-height: 40px;
-				font-size: 30px;
+				width: 6rem;
+				height:2.5rem;
+				line-height: 2.5rem;
+				font-size: 1.3rem;
 				img{
-					width: 30px;
-					height: 30px;
-					margin-bottom: -5px;
-					margin-right: 10px;
+					width: 1.3rem;
+					height: 1.3rem;
+					margin-bottom: -0.25rem;
+					margin-right: 0.2rem;
 				}
 			}
 			.isSure{
-				font-size: 25px;
-				line-height: 50px;
+				font-size: 1.1rem;
+				height: 2.5rem;
+				width: 2.5rem;
+				line-height: 2.5rem;
+				margin-right: 1rem;
 			}
 		}
 		section{
-			margin-top: 60px;
-			width: 600px;
-			.buygoods{
+			margin-top: 3rem;
+			max-width: 600px;
+			width: 100%;
+			&>div{
+				padding: .2rem;
+				width: 100%;
 				display: flex;
-				height: 100px;
+				background-color: #e7e7e7;
 				div{
 					&:first-child{
-						width: 50px;
-						height: 100px;
-						line-height: 50px;
+						width: 1rem;
+						height: 4rem;
+						line-height: 4rem;
+						margin-right: 0.2rem;
 						img{
-							width: 30px;
-							height: 30px;
-							margin-top: 35px;
+							width: 1rem;
+							height: 1rem;
 						}
 					}
 					&:nth-child(2){
-						width: 100px;
-						height: 100px;
+						width: 4rem;
+						height: 4rem;
+						line-height: 4rem;
+						margin-right: 0.2rem;
 						img{
-							width: 100px;
-							height: 100px;
+							width: 3.5rem;
+							height: 4rem;
 						}
 					}
 				}
 				ul{
+					margin: 0;
 					list-style-type: none;
 					padding: 0;
-					height: 25px;
+					li{
+						font-size: 0.5rem;
+						height: 1rem;
+					}
 				}
 			}
 		}
+		.delete{
+			border: 1px solid black;
+			background-color: white;
+			margin-left: 1rem;
+			color: red;
+		}
 		footer{
 			position: fixed;
-			bottom: 0;
+			bottom: 0%;
 			left: 50%;
 			transform: translate(-50%);
+			max-width: 600px;
+			width: 100%;
+			height:3rem;
 			display: flex;
 			.footerleft{
-				width: 300px;
 				background-color: yellow;
+				width: 50%;
 				display: flex;
+				color: #333333;
 				.xuan{
-					width: 100px;
-					height: 50px;
 					display: flex;
-					line-height: 50px;
+					width: 3.5rem;
+					line-height: 3rem;
 					img{
-						margin-top: 10px;
-						width: 30px;
-						height: 30px;
+						width: 1rem;
+						margin-right: .2rem;
+						margin-left: .2rem;
+					}
+				}
+				.xuan+div{
+					div{
+						height: 50%;
+						line-height: 1.5rem;
 					}
 				}
 			}
 			.footerright{
-				width: 300px;
-				background-color:black;
-				color:white;
-				font-size: 30px;
+				width: 50%;
+				background-color: #000000;
+				color:yellow;
 				text-align: center;
+				line-height: 3rem;
 			}
 		}
 	}

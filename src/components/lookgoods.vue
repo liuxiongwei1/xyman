@@ -1,7 +1,7 @@
 <template>
 	<div class="lookgoods">
 		<header>
-			<div><img src="/static/images/shoes/left.svg" alt="" @click='regret'></div>
+			<div><img src="/static/images/shoes/left.svg" alt="" @click='regret1'></div>
 			<div class="headline"><img src="/static/images/shoes/1.png" alt=""> 单品详情</div>
 			<div></div>
 		</header>
@@ -24,11 +24,11 @@
 					<el-drawer
 					  title="分享到"
 					  :visible.sync="drawer"
-					  :direction="direction" style='text-align: center;font-size: 20px;'>
+					  :direction="direction" style='text-align: center;font-size: 1rem;'>
 					  <div class='weiAndQQ' style="text-align: center;">
-					  	<img src="/static/images/lookgoods/QQ.png" alt=""style='width: 70px;height: 70px;margin-left: 20px;margin-right: 20px;'>
-					  	<img src="/static/images/lookgoods/weibo.png" alt=""style='width: 70px;height: 70px;margin-left: 20px;margin-right: 20px;'>
-					  	<img src="/static/images/lookgoods/weixin.png" alt=""style='width: 70px;height: 70px;margin-left: 20px;margin-right: 20px;'>
+					  	<img src="/static/images/lookgoods/QQ.png" alt=""style='width: 2rem;height:2rem;margin-left: 1rem;margin-right: 1rem;'>
+					  	<img src="/static/images/lookgoods/weibo.png" alt=""style='width: 2rem;height: 2rem;margin-left: 1rem;margin-right: 1rem;'>
+					  	<img src="/static/images/lookgoods/weixin.png" alt=""style='width: 2rem;height: 2rem;margin-left: 1rem;margin-right: 1rem;'>
 					  </div>
 					</el-drawer>
 				</div>
@@ -54,22 +54,28 @@
 			<div v-for='(m,n) in moregoods' :key='m.title' class='recommend'>
 				<h5>{{m.title}}</h5>
 				<div>
-					<router-link tag='div' to='/lookgoods' v-for='(i,s) in m.com' :key='i.src'>
-						<img :src="i.src" alt="">
-						<div>{{i.goods}}</div>
-						<div class="goodsprice">{{i.price}}</div>
-					</router-link>
+					<div>
+						<router-link tag='div' to='/lookgoods' v-for='(i,s) in m.com' :key='i.src'>
+							<img :src="i.src" alt="">
+							<div>{{i.goods}}</div>
+							<div class="goodsprice">{{i.price}}</div>
+						</router-link>
+					</div>
 				</div>
+				
 			</div>
 		</section>
 		<div class='favorite' :style='{display:open}'@click='clear'>
 		</div>
 		<div :class="isShow?Yes:No">
 			<h4>选择收藏夹</h4>
-			<input type="text" placeholder="添加收藏夹" v-model='favoriteclass'>
-			<h2 class='add' @click='addfavorite'>
-				<img src="/static/images/home/add.svg" alt="">
-			</h2>
+			<div class='addfavori'>
+				<input type="text" placeholder="添加收藏夹" v-model='favoriteclass'>
+				<h2 class='add' @click='addfavorite'>
+					<img src="/static/images/home/add.svg" alt="">
+				</h2>
+			</div>
+			
 			<ul >
 				<li v-for='(m,n) in favoriteul' :key='m.name'@click='addFavoriteToClass(m)'>{{m.name}}({{m.inform.length}})</li>
 			</ul>
@@ -78,37 +84,38 @@
 			加入购物车
 		</footer>
 		<div class="goodsStyle" :style='{height:goodsStyWidth}'>
-			<header :style='{width:hfwidth}'>
-				<div><img src="/static/images/shoes/left.svg" alt="" @click='regret'></div>
-				<div class="headline"><img src="/static/images/shoes/1.png" alt=""> 选择商品属性</div>
-				<div></div>
-			</header>
-			<section class="goodssection">
-				<section>
-					<img :src="goodsinformation.imgs" alt="">
+			<div>
+				<header :style='{width:hfwidth}'>
+					<div><img src="/static/images/shoes/left.svg" alt="" @click='regret'></div>
+					<div class="headline"><img src="/static/images/shoes/1.png" alt=""> 选择商品属性</div>
+					<div class="zhan"></div>
+				</header>
+				<section class="goodssection">
+					<section>
+						<img :src="goodsinformation.imgs" alt="">
+						<div>
+							<div>{{goodsinformation.title}}</div>
+							<div>已选</div>
+							<div>价格:&yen;{{goodsinformation.newprice}}</div>
+							<div>数量：{{num}}</div>
+						</div>
+					</section>
 					<div>
-						<div>{{goodsinformation.title}}</div>
-						<div>已选</div>
-						<div>价格:&yen;{{goodsinformation.newprice}}</div>
-						<div>数量：{{num}}</div>
+						颜色
+						<div><span style='background-color: orange'>Black Monochrome</span></div>
+						尺寸
+						<div><span v-for='(m,n) in sizeStyle' :class='{"sizeClass":m.sure}' @click='clickSize(m)'>{{m.name}}</span></div>
+						数量
+						<div>
+							<input type="button" value='+' @click='addnum'><span>{{num}}</span><input type="button" value='-' @click='reducenum'>
+						</div>
 					</div>
 				</section>
-				<div>
-					颜色
-					<div><span style='background-color: orange'>Black Monochrome</span></div>
-					尺寸
-					<div><span v-for='(m,n) in sizeStyle' :class='{"sizeClass":m.sure}' @click='clickSize(m)'>{{m.name}}</span></div>
-					数量
-					<div>
-						<input type="button" value='+' @click='addnum'><span>{{num}}</span><input type="button" value='-' @click='reducenum'>
-					</div>
-				</div>
-			</section>
-			<footer :style='{width:hfwidth}'>
-				<div @click='addshopping'>加入购物车</div>
-				<div></div>
-				<div >立即购买</div>
-			</footer>
+				<footer :style='{width:hfwidth}' class='goodsfooter'>
+					<div @click='addshopping'>加入购物车</div>
+					<div @click='tobuy'>立即购买</div>
+				</footer>
+			</div>
 		</div>
 	</div>
 </template>
@@ -270,8 +277,12 @@
 		    		this.updown='/static/images/lookgoods/down.svg'
 		    	}
 		    },
+		    regret1(){
+		    	history.back();
+		    },
 		    regret(){
-		    	history.back()
+		    	this.goodsStyWidth='0';
+		    	this.hfwidth='0';
 		    },
 		    entry(){
 		    	if(localStorage.getItem('entryStatus')=='true'){
@@ -361,7 +372,7 @@
 		    },
 		    goodsStyle(){
 		    	this.goodsStyWidth='100%';
-		    	this.hfwidth='600px';
+		    	this.hfwidth='100%';
 		    },
 		    addnum(){
 		    	this.num++
@@ -402,11 +413,21 @@
 		    	}
 		    	this.goodsStyWidth='0';
 		    	this.hfwidth='0';
+		    },
+		    tobuy(){
+		    	var arr=[];
+		    	arr.push(this.goodsinformation);
+		    	localStorage.setItem('buygoods',JSON.stringify(arr));
+		    	open("http://localhost:8080/#/sureGoods","_self");
 		    }
 		}
 }
 </script>
 <style lang="less" scoped>
+	*{
+		margin: 0;
+		padding: 0;
+	}
 	.el-carousel__item div{
 		margin: auto;
 	    width: 200px;
@@ -433,8 +454,14 @@
 		width: 100%;
 		margin: auto;
 		overflow: hidden;
+		.weiAndQQ{
+			img{
+				width: 1rem;
+				height: 1rem;
+			}
+		}
 		.classB{
-			height:300px;
+			height:13rem;
 			transition:height 1s linear;
 		}
 		.classA{
@@ -450,43 +477,47 @@
 			height: 100%;
 			background-color: black;
 			opacity: 0.7;
-			z-index: 3;
+			z-index: 4;
 		}
 		.favorite+div{
 			overflow: hidden;
-			width: 600px;
+			max-width: 600px;
+			width: 100%;
 			position: fixed;
 			bottom: 0;
-			z-index:20;
 			left: 50%;
 			transform: translate(-50%);
 			background-color: white;
-			z-index: 3;
+			z-index: 4;
 			h4{
-				margin-top: 10px;
-				margin-bottom: 5px;
-				font-size: 25px;
+				margin-top: .7rem;
+				margin-bottom: 0.3rem;
+				font-size: 1rem;
 				text-align: center;
 			}
-			input{
-				width:500px;
-				height: 30px;
-				font-size: 20px;
-				line-height: 30px;
-				border:none; 
-				outline: none;
-				margin-left: 10px;
-			}
-			.add{
-				display: inline-block;
-				width: 20px;
-				height: 20px;
-				img{
+			.addfavori{
+				input{
+					max-width:500px;
+					width: 80%;
+					height: 2rem;
+					font-size: 1rem;
+					line-height: 2rem;
+					border:none; 
+					outline: none;
+					margin-left: 0.7rem;
+				}
+				.add{
+					display: inline-block;
 					width: 20px;
 					height: 20px;
+					img{
+						width: 20px;
+						height: 20px;
+					}
 				}
 			}
 			ul{
+				overflow: auto;
 				padding: 0;
 				list-style-type: none;
 				li{
@@ -533,6 +564,7 @@
 			width: 100%;
 			height: 3rem;
 			display: flex;
+			z-index: 4;
 			justify-content: space-between;
 			div{
 				width: 3rem;
@@ -544,7 +576,7 @@
 				}
 			}
 			.headline{
-				width:6.5rem;
+				width:8rem;
 				height:6rem;
 				font-size: 1rem;
 				img{
@@ -609,23 +641,27 @@
 			.shrink{
 				text-align: center;
 				img{
-					height: 20px;
-					width: 20px;
+					margin-top: 0.2rem;
+					height: 1.1rem;
+					width: 1.1rem;
 				}
 			}
 			.recommend{
 				h5+div{
-					display: flex;
-					div{
-						margin-left: 5px;
-						width: 100px;
-						text-align: center;
-						img{
+					overflow: auto;
+					&>div{
+						display: flex;
+						div{
+							margin-left: 5px;
 							width: 100px;
-							height: 100px;
-						}
-						.goodsprice{
-							color: orange;
+							text-align: center;
+							img{
+								width: 100px;
+								height: 100px;
+							}
+							.goodsprice{
+								color: orange;
+							}
 						}
 					}
 				}
@@ -636,9 +672,10 @@
 			bottom:0;
 			left: 50%;
 			transform: translate(-50%);
-			width:600px;
+			max-width:600px;
+			width: 100%;
 			text-align: center;
-			font-size: 25px;
+			font-size: 1.5rem;
 			color: white;
 			background-color: #000000;
 		}
@@ -646,117 +683,114 @@
 			background-color: orange;
 		}
 		.goodsStyle{
-			position: absolute;
-			max-width: 600px;
+			position: fixed;
 			width: 100%;
-			transition: width 1s;
-			// height: 100%;
-			left: 0;
+			height: 100%;
+			right: 0;
 			top: 0;
 			overflow: hidden;
 			background-color: white;
-			z-index: 4;
-			&>header{
-				position: fixed;
-				top: 0px;
-				background-color: white;
+			z-index: 5;
+			&>div{
 				max-width: 600px;
 				width: 100%;
-				height: 3rem;
-				display: flex;
-				justify-content: space-between;
-				div{
-					width: 3rem;
-					height: 3rem;
-					img{
-						margin-top: 10px;
-						width: 1.5rem;
-						height:1.5rem;
-					}
-				}
-				.headline{
-					width:2rem;
-					height:6rem;
-					font-size: 1rem;
-					img{
-						width: 1.5rem;
-						height: 1.5rem;
-						margin-bottom: -5px;
-						margin-right: 10px;
-					}
-				}
-			}
-			header{
-				height: 50px;
-				overflow: hidden;
-			}
-			.goodssection{
-				width:600px;
-				height: 75%;
-				overflow: auto;
-				section{
-					margin-top: 100px;
-					img{
-						width: 150px;
-						height: 150px;
-						margin-bottom: -20px;
-					}
-					img+div{
-						font-size: 20px;
-						display: inline-block;
-						margin-left:10px;
-						div{
-							&:nth-child(2){
-							color: orange;
-						}
-						}
-						
-					}
-				}
-				section+div{
-					font-size: 30px;
-					div{
-						margin-bottom: 20px;
-						border-bottom: 1px solid #696969;
-						padding-bottom: 20px;
-						span{
-							display: inline-block;
-							font-size: 20px;
-							padding: 10px 10px;
-							border: 1px solid orange;
-							margin-right: 10px;
-						}
-						input{
-							width: 40px;
-							height: 40px;
-						}
-						input+span{
-							margin-right: 0;
-							border: none;
-						}
-					}
-				}
-			}
-			footer{
-				overflow: hidden;
-				height: 10%;
-				position: fixed;
-				height: 50px;
-				bottom: 0px;
-				display: flex;
-				justify-content: center;
-				line-height: 200%;
-				div{
-					width: 40px;
-					text-align: center;
+				margin: auto;
+				&>header{
+					overflow: hidden;
+					margin-top: 1rem;
 					background-color: white;
-					&:first-child{
-						width: 280px;
-						background-color:black;
+					max-width: 600px;
+					width: 100%;
+					height: 3rem;
+					display: flex;
+					justify-content: space-between;
+					div{
+						width: 2rem;
+						height: 2rem;
+						img{
+							width: 1.5rem;
+							height:1.5rem;
+						}
 					}
-					&:last-child{
-						width: 280px;
-						background-color: yellow;
+					.headline{
+						width:8rem;
+						height:2rem;
+						font-size: 1rem;
+						img{
+							width: 1.5rem;
+							height: 1.5rem;
+							margin-bottom: -0.5rem;
+						}
+					}
+				}
+				.goodssection{
+					max-width:600px;
+					width: 100%;
+					section{
+						img{
+							width: 4rem;
+							height: 5rem;
+							margin-right: 2rem;
+						}
+						img+div{
+							font-size: 1rem;
+							display: inline-block;
+							margin-left:0.8;
+							div{
+								&:nth-child(2){
+								color: orange;
+							}
+							}
+							
+						}
+					}
+					section+div{
+						font-size: 1rem;
+						div{
+							margin-bottom: 1.1rem;
+							border-bottom: 1px solid #696969;
+							padding-bottom: 1.1rem;
+							span{
+								display: inline-block;
+								font-size: 1rem;
+								padding: 0.6rem 0.6rem;
+								margin-top: 0.3rem;
+								border: 0.01rem solid orange;
+								margin-right: 0.6rem;
+							}
+							input{
+								width: 1.5rem;
+								height: 1.5rem;
+							}
+							input+span{
+								margin-right: 0;
+								border: none;
+							}
+						}
+					}
+				}
+				.goodsfooter{
+					max-width:600px;
+					width: 100%;
+					height: 2.5rem;
+					bottom: 0%;
+					overflow: hidden;
+					display: flex;
+					justify-content: space-around;
+					line-height: 2.5rem;
+					text-align: center;
+					font-size: 1.1rem;
+					background-color: white;
+					div{
+						&:first-child{
+							width: 40%;
+							background-color:black;
+						}
+						&:last-child{
+							width: 40%;
+							background-color: yellow;
+							color: #000000;
+						}
 					}
 				}
 			}

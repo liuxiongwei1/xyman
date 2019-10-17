@@ -24,56 +24,59 @@
 		}
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 	.router-link-active{
 			background-color:orange;
 		}
     .older{
-    	width:600px;
+    	max-width:600px;
+    	width: 100%;
     	margin: auto;
     	header{
 			position: fixed;
 			top: 0px;
 			background-color: white;
-			width: 600px;
-			height: 50px;
+			max-width: 600px;
+			width: 100%;
+			height: 2rem;
 			display: flex;
 			justify-content: space-between;
 			div{
-				width: 50px;
-				height: 50px;
+				width: 3rem;
+				height: 3rem;
 				img{
-					margin-top: 10px;
-					width: 30px;
-					height:30px;
+					margin-top: 0.5rem;
+					width: 1.5rem;
+					height:1.5rem;
 				}
 			}
 			.headline{
-				width: 160px;
-				height:40px;
-				line-height: 40px;
-				font-size: 30px;
+				width: 8rem;
+				height:3rem;
+				line-height: 3rem;
+				font-size:1rem;
 				img{
-					width: 30px;
-					height: 30px;
-					margin-bottom: -5px;
-					margin-right: 10px;
+					width: 1.3rem;
+					height: 1.3rem;
+					margin-bottom: -0.3rem;
+					margin-right: 0.3rem
 				}
 			}
 		}
 		ul{
-			margin-top: 60px;
-			width: 600px;
+			margin-top: 3rem;
+			max-width: 600px;
+			width: 100%;
 			list-style-type: none;
 			padding: 0;
 			display: flex;
 			border-top:1px solid #cccccc;
 			border-bottom: 1px solid #cccccc; 
 			li{
-				width: 120px;
-				height:60px;
-				line-height: 60px;
-				font-size: 25px;
+				width: 20%;
+				height:3rem;
+				line-height: 3rem;
+				font-size: 1rem;
 				text-align: center;
 			}
 		}

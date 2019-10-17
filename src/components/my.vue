@@ -28,8 +28,8 @@
 			</ul>
 		</header>
 		<section>
-			<router-link tag='div' to='/collect'>单品收藏</router-link>
-			<router-link tag='div' to='/concern'>品牌关注</router-link>
+			<router-link tag='div' to='/collect' exact>单品收藏</router-link>
+			<router-link tag='div' to='/concern' exact>品牌关注</router-link>
 		</section>
 		<footer>
 			<router-view />
@@ -40,72 +40,76 @@
 	export default{
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 	.my{
 		margin: auto;
-		width: 600px;
+		max-width: 600px;
+		width: 100%;
 		header{
+			width: 100%;
 			text-align: center;
-			font-size: 20px;
+			font-size: 16px;
 			.mytitle{
-				width: 600px;
+				width: 100%;
 				border-bottom: 2px solid #e9e9e9;
-				height: 40px;
+				height: 2rem;
 				img{
-					width: 30px;
-					height: 30px;
-					margin-bottom: -10px;
-					margin-right: 10px;
+					width: 1rem;
+					height: 1rem;
 				}
 			}
 			.myname{
 				div{
-					width: 100px;
-					height: 100px;
-					border-radius: 50px;
-					margin: 20px auto 0;
+					width: 4rem;
+					height: 4rem;
+					border-radius: 2rem;
+					margin: 1rem auto 0;
 					background-image: url(/static/images/my/2.gif);
 					background-repeat: no-repeat;
-					background-size: 100px 100px;
+					background-size: 100% 100%;
 				}
-				
-				
+				p{
+					margin-top: .5rem;
+				}
 			}
 			ul{
+				border-top: 0.05rem solid #5a7fa2;
 				padding: 0;
-				width: 600px;
-				border-top: 1px solid #d9d9d9;
+				padding-top:1rem;
 				list-style-type: none;
 				display: flex;
 				justify-content: space-around;
-				padding-top: 10px;
 				li{
-					border-right: 4px solid #d9d9d9;
-					padding-right: 50px;
-					padding-left: 5px;
-					&:last-child{
-						border-right: none;
-						padding-right: 5px;
+					width: 25%;
+					border-right: 0.05rem solid #5a7fa2;
+					border-left: 0.05rem solid #5a7fa2;
+					font-size: 1rem;
+					&:first-child{
+						border-left:1px solid transparent;
 					}
-					div{
-						text-align: center;
+					&:last-child{
+						border-right: 1px solid transparent;
+					}
+					img{
+						width: 1.3rem;
+						height: 1.3rem;
 					}
 				}
 			}
 		}
 		section{
+			width: 100%;
 			display: flex;
-			justify-content: space-around;
-			font-size: 30px;
-			margin-top:20px;
 			div{
-				width: 400px;
+				width: 50%;
 				text-align: center;
-			}
-			.router-link-active{
-				color: orange;
-				border-bottom: 4px solid orange;
+				font-size: 1.1rem;
 			}
 		}
+		.router-link-active{
+				color: orange;
+				background-color: white;
+				border-bottom: 0.1rem solid orange;
+			}
 	}
 </style>

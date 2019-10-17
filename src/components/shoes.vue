@@ -93,6 +93,80 @@
 					pitch1:'/static/images/shopping/pitch.svg',
 					pitch2:'/static/images/shopping/nopitch.svg',
 				},
+				{	
+					imgs:"/static/images/shoes/01.jpg",
+					title:"LOS运动鞋",
+					newprice:"753",
+					oldprice:"￥1538",
+					heartsrc:'/static/images/home/heart2.svg',
+					heart1src:'/static/images/home/heart1.svg',
+					heart2src:'/static/images/home/heart2.svg',
+					num:'0',
+					pitch:'/static/images/shopping/nopitch.svg',
+					pitch1:'/static/images/shopping/pitch.svg',
+					pitch2:'/static/images/shopping/nopitch.svg',
+				},
+				{
+					imgs:"/static/images/shoes/02.jpg",
+					title:"真皮运动鞋",
+					newprice:"553",
+					heartsrc:'/static/images/home/heart2.svg',
+					heart1src:'/static/images/home/heart1.svg',
+					heart2src:'/static/images/home/heart2.svg',
+					num:'0',
+					pitch:'/static/images/shopping/nopitch.svg',
+					pitch1:'/static/images/shopping/pitch.svg',
+					pitch2:'/static/images/shopping/nopitch.svg',
+				},
+				{
+					imgs:"/static/images/shoes/03.jpg",
+					title:"经典真皮运动鞋",
+					newprice:"553",
+					heartsrc:'/static/images/home/heart2.svg',
+					heart1src:'/static/images/home/heart1.svg',
+					heart2src:'/static/images/home/heart2.svg',
+					num:'0',
+					pitch:'/static/images/shopping/nopitch.svg',
+					pitch1:'/static/images/shopping/pitch.svg',
+					pitch2:'/static/images/shopping/nopitch.svg',
+				},
+				{
+					imgs:"/static/images/shoes/04.jpg",
+					title:"复古运动鞋",
+					newprice:"609",
+					oldprice:"￥650",
+					heartsrc:'/static/images/home/heart2.svg',
+					heart1src:'/static/images/home/heart1.svg',
+					heart2src:'/static/images/home/heart2.svg',
+					num:'0',
+					pitch:'/static/images/shopping/nopitch.svg',
+					pitch1:'/static/images/shopping/pitch.svg',
+					pitch2:'/static/images/shopping/nopitch.svg',
+				},
+				{
+					imgs:"/static/images/shoes/05.jpg",
+					title:"真皮休闲鞋",
+					newprice:"574",
+					heartsrc:'/static/images/home/heart2.svg',
+					heart1src:'/static/images/home/heart1.svg',
+					heart2src:'/static/images/home/heart2.svg',
+					num:'0',
+					pitch:'/static/images/shopping/nopitch.svg',
+					pitch1:'/static/images/shopping/pitch.svg',
+					pitch2:'/static/images/shopping/nopitch.svg',
+				},
+				{
+					imgs:"/static/images/shoes/06.jpg",
+					title:"真皮休闲鞋",
+					newprice:"468",
+					heartsrc:'/static/images/home/heart2.svg',
+					heart1src:'/static/images/home/heart1.svg',
+					heart2src:'/static/images/home/heart2.svg',
+					num:'0',
+					pitch:'/static/images/shopping/nopitch.svg',
+					pitch1:'/static/images/shopping/pitch.svg',
+					pitch2:'/static/images/shopping/nopitch.svg',
+				},
 			]
 		}
 		},
@@ -110,7 +184,6 @@
 						goodsTnfor:n,
 					}
 				});
-				
 			}
 		},
 
@@ -164,7 +237,7 @@
 			&>div{
 				max-width: 250px;
 				width: 40%;
-				height: 20rem;
+				height: 15rem;
 				background-color: white;
 				margin-bottom: 20px;
 				text-align: center;
@@ -174,11 +247,12 @@
 				&>div{
 					width: 100%;
 					text-align: center;
-					height: 15rem;
+					height: 10rem;
 					line-height: 15rem;
 					img{
 						width:70%;
-						max-height: 15rem;
+						height: 100%;
+
 					}
 				}
 				.older{

@@ -3,7 +3,7 @@
 		<header>
 			<div><img src="/static/images/shoes/left.svg" alt="" @click='regret'></div>
 			<div class="headline"><img src="/static/images/shoes/1.png" alt="">确认订单</div>
-			<div></div>
+			<div class="isSure"></div>
 		</header>
 		<section>
 			<div><img src="/static/images/sureGoods/where.svg" alt=""><span>选择收货地址</span></div>
@@ -87,91 +87,103 @@
 		}
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 	.sureGoods{
-		width: 600px;
+		max-width: 600px;
+		width: 100%;
 		margin: auto;
 		header{
 			position: fixed;
-			top: 0px;
+			top: 0%;
 			background-color: white;
-			width: 600px;
-			height: 50px;
+			max-width: 600px;
+			width: 100%;
+			height: 2.5rem;
 			display: flex;
 			justify-content: space-between;
 			div{
-				width: 50px;
-				height: 50px;
+				width: 2.5rem;
+				height: 2.5rem;
+				line-height:3rem; 
 				img{
-					margin-top: 10px;
-					width: 30px;
-					height:30px;
+					width: 1.5rem;
+					height:1.5rem;
 				}
 			}
 			.headline{
-				width: 160px;
-				height:40px;
-				line-height: 40px;
-				font-size: 30px;
+				width: 7rem;
+				height:2.5rem;
+				line-height: 2.5rem;
+				font-size: 1.3rem;
 				img{
-					width: 30px;
-					height: 30px;
-					margin-bottom: -5px;
-					margin-right: 10px;
+					width: 1.3rem;
+					height: 1.3rem;
+					margin-bottom: -0.25rem;
+					margin-right: 0.2rem;
 				}
+			}
+			.isSure{
+				height: 2rem;
+				width: 2rem;
 			}
 		}
 		section{
-			margin-top: 60px;
+			margin-top: 2.5rem;
 			&>div{
 				display: flex;
 				&:first-child{
-					height: 50px;
-					font-size: 30px;
+					height: 2rem;
+					font-size: 1.1rem;
 				}
 			}
 			img{
-				width: 50px;
-				height: 50px;
+				width: 1.5rem;
+				height: 1.5rem;
 			}
 			h3{
-				font-size: 30px;
+				font-size: 1.2rem;
 			}
 			h3+div{
 				div{
+					font-size: 0.4rem;
 					&:first-child{
-						font-size: 20px;
+						font-size: .8rem;
 						font-weight: bold;
+						color:black;
+					}
+					&:nth-child(2){
+						color:#cccccc;
 					}
 				}
 			}
 			&>section{
-				margin-top: 20px;
+				margin-top: 1rem;
 				div{
-					height: 100px;
-					font-size: 20px;
-					margin-top: 10px;
-					margin-bottom: 10px;
+					height: 4rem;
+					font-size: 1rem;
+					margin-top: .5rem;
+					margin-bottom: .5rem;
 					&:first-child{
-						height: 100px;
-						font-size: 20px;
+						height: 4rem;
+						font-size: 1rem;
 					}
 					img{
-						width: 100px;
-						height: 100px;
+						width: 4rem;
+						height: 4rem;
 					}
 					ul{
 						display: inline-block;
 						list-style-type: none;
 						padding: 0;
+						margin: 0;
 					}
 				}
 			}
 			.quan{
 				justify-content: space-between;
-				font-size: 25px;
-				margin-top:20px;
-				margin-bottom: 20px; 
+				font-size: 1rem;
+				margin-top:1rem;
+				margin-bottom: 1rem; 
 				.fruit{
 					color: orange;
 				}
@@ -182,20 +194,21 @@
 		}
 		textarea{
 			border: none;
-			font-size: 30px;
+			font-size: 1rem;
 		}
 		footer{
 			position: fixed;
-			width: 600px;
-			font-size: 30px;
+			max-width: 600px;
+			width: 100%;
+			font-size: 1.3rem;
 			bottom: 0;
 			left: 50%;
 			transform: translate(-50%);
 			display: flex;
 			div{
-				width: 300px;
-				height: 50px;
-				line-height: 50px;
+				width: 50%;
+				height: 2.5rem;
+				line-height: 2.5rem;
 				text-align: center;
 				&:first-child{
 					background-color: yellow;

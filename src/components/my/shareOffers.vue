@@ -19,51 +19,54 @@
 </script>
 <style lang="less" scoped>
 	.shareOffers{
-		padding-top: 20px;
+		padding-top: 2rem;
 		background-image: url(/static/images/my/sharebg.jpg);
 		background-repeat: no-repeat;
 		background-size: 100vw 100vh;
 		height: 100vh;
 		width: 100vw;
 		.toHome{
-			width: 50px;
-			height: 50px;
-			border-radius:50px;
+			width: 3rem;
+			height: 3rem;
+			border-radius:3rem;
 			background-color: #737373;
 			position: fixed;
 			top:50%;
-			left: 10px;
+			left: 1%;
 			img{
-				margin-left:1px;
-				margin-bottom: 5px;
-				width: 50px;
-				height: 50px;
+				width: 3rem;
+				height: 3rem;
 			}
 		}
 		.picture{
 			text-align: center;
 			margin: auto;
 			max-width: 600px;
+			width: 90%;
 			img{
-				max-width:600px; 
+				max-width:600px;
+				width: 90%; 
+			}
+			&:last-child{
+				width: 20%;
 			}
 		}
 		.picture+div{
-			width: 100px;
+			width: 6rem;
 			color:white;
-			margin: 20px auto 0;
+			margin: 1rem auto 0;
 			text-align: center;
 			div{
-				margin-top: 5px;
-				margin-bottom: 10px;
-				border:1px solid white;
-				border-radius:2px;
+				margin-top: 0.4rem;
+				margin-bottom: 0.8rem;
+				border:0.05rem solid white;
+				border-radius:0.2rem;
 				text-align: center;
-				width: 100px;
-				height: 50px;
-				line-height: 50px;
+				width: 6rem;
+				height: 3rem;
+				line-height: 3rem;
 				color:yellow;
-				font-size: 25px;
+				font-size: 1.4rem;
 			}
 		}
 	}

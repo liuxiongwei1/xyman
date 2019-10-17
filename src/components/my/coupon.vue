@@ -1,6 +1,5 @@
 <template>
 	<div class="coupon">
-		<router-link tag='div' to='/' class="toHome"><img src="/static/images/my/home.svg" alt=""></router-link>
 		<header>
 			<div><img src="/static/images/shoes/left.svg" alt="" @click='regret'></div>
 			<div class="headline"><img src="/static/images/shoes/1.png" alt="">我的优惠券</div>
@@ -90,51 +89,38 @@
 			height:0px;
 			transition:height 0.5s linear;
 		}
-		.toHome{
-			width: 50px;
-			height: 50px;
-			border-radius:50px;
-			background-color: #737373;
-			position: fixed;
-			top:50%;
-			left: 10px;
-			img{
-				margin-left:1px;
-				margin-bottom: 5px;
-				width: 50px;
-				height: 50px;
-			}
-		}
 		header{
 			position: fixed;
 			z-index: 20;
 			top: 0;
 			left: 50%;
 			transform: translate(-50%);
-			width: 700px;
-			height: 50px;
+			max-width: 600px;
+			width: 90%;
+			height: 3rem;
 			display: flex;
 			justify-content: space-between;
 			background-color: white;
 			div{
-				width: 50px;
-				height: 50px;
+				width: 2.5rem;
+				height: 2.5rem;
+				line-height: 2.5rem;
 				img{
-					margin-bottom: -30px;
-					width: 30px;
-					height:30px;
+					margin-top: 1rem;
+					width: 1.5rem;
+					height:1.5rem;
 				}
 			}
 			.headline{
-				width: 190px;
-				height:40px;
-				line-height: 50px;
-				font-size: 30px;
+				width: 7.5rem;
+				height:3rem;
+				line-height: 3rem;
+				font-size: 1rem;
 				img{
-					width: 30px;
-					height: 30px;
-					margin-bottom: -5px;
-					margin-right: 10px;
+					width: 1.3rem;
+					height: 1.3rem;
+					margin-bottom: 0.2rem;
+					margin-right: .8rem;
 				}
 			}
 		}
@@ -145,65 +131,76 @@
 			transform: translate(-50%);
 			background-color: white;
 			z-index: 19;
-			width: 700px;
+			max-width: 700px;
+			width: 90%;
 			margin: auto;
-			padding-top: 70px;
+			padding-top: 3rem;
 			overflow: hidden;
 			input{
 				border:none;
 				outline: none;
-				height:50px;
-				font-size: 20px;
+				height:3rem;
+				font-size: 1.2rem;
 				&:first-child{
-					width: 500px;
+					max-width: 600px;
+					width: 100%;
 					margin-left:20px;
 				}
 				&:last-child{
 					background-color: orange;
 					color:white;
-					width: 100px;
+					width: 5rem;
+					height: 2rem;
+					margin-left: 1rem;
 				}
 			}
 		}
 		ul{
 			padding: 0;
 			list-style-type: none;
-			margin: 60px auto 0;
+			margin: 0.5rem auto 0;
+			max-width: 600px;
+				width: 90%;
 			li{
-				width: 600px;
-				height: 300px;
+				max-width: 600px;
+				width: 90%;
+				height: 6rem;
 				background-image: url(/static/images/my/couponbg.png);
 				background-repeat: no-repeat;
-				background-size: 640px 300px;
-				padding: 20px 30px;
+				background-size: 100% 100%;
+				padding: 3rem 1rem;
 				margin: auto;
 				position: relative;
+				margin-top: .5rem;
 				div{
 					text-align: right;
+					font-size: 0.7rem;
 					h1{
-						margin-left:500px;
-						width: 100px;
-						border-bottom: 1px solid black;
+						margin-left:90%;
+						width: 2rem;
+						font-size: 1rem;
+						border-bottom: .01rem solid black;
 					}
 				}
 				p{
-					font-size: 30px;
+					font-size: 1rem;
 					text-align: center;
 					color: white;
-					margin-top: 100px;
+					margin-top: 4rem;
 				}
 				footer{
-					width: 640px;
-					height: 300px;
+					max-width: 600px;
+					width: 100%;
+					height: 12rem;
 					position: absolute;
-					font-size: 30px;
+					font-size: 1rem;
 					color: white;
 					top: 0;
 					left: 0;
 					transform: translate(0);
 					background-color: black;
 					text-align: center;
-					line-height: 300px;
+					line-height: 12rem;
 					opacity: 0.7;
 				}
 			}
@@ -213,13 +210,14 @@
 			left: 50%;
 			bottom:0px;
 			transform: translate(-50%);
-			width: 700px;
-			height: 50px;
+			max-width: 700px;
+			width: 90%;
+			height: 2rem;
 			color: orange;
 			text-align: center;
 			background-color: #595757;
-			line-height: 50px;
-			font-size: 30px;
+			line-height: 2rem;
+			font-size: 1rem;
 		}
 		.exchange{
 			h5{

@@ -26,26 +26,32 @@
 		}
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 	.complete{
+		max-width: 600px;
+		width: 100%;
 		section{
-			margin-top: 20px;
-			div{
-				width: 600px;
-				height: 100px;
-				font-size: 20px;
+			margin-top: 1rem;
+			&>div{
+				max-width: 600px;
+				width: 100%;
+				height: 6rem;
+				font-size: 1rem;
 				margin-top: 10px;
 				margin-bottom: 10px;
+				display: flex;
+				margin: auto;
 				&:first-child{
-					height: 100px;
-					font-size: 20px;
+					height: 6rem;
+					font-size: 1rem;
 				}
 				img{
-					width: 150px;
-					height: 150px;
+					width: 4rem;
+					height: 4rem;
+					margin-right: 0.5rem;
+					margin-left: 0.5rem;
 				}
 				ul{
-					width: 400px;
 					margin: 0;
 					display: inline-block;
 					list-style-type: none;

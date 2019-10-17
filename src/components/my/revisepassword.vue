@@ -24,63 +24,71 @@
 </script>
 <style lang='less' scoped>
 	.revisepassword{
-		width: 800px;
+		width: 100vw;
+		height: 100vw;
 		margin: auto;
 		.toHome{
-			width: 50px;
-			height: 50px;
-			border-radius:50px;
+			width: 2rem;
+			height: 2rem;
+			border-radius:2rem;
 			background-color: #737373;
 			position: fixed;
 			top:50%;
-			left: 10px;
+			left: 1%;
 			img{
 				margin-left:1px;
 				margin-bottom: 5px;
-				width: 50px;
-				height: 50px;
+				width: 2rem;
+				height: 2rem;
 			}
 		}
 		header{
-			width: 700px;
-			margin:  auto;
-			height: 50px;
+			position: fixed;
+			top: 0%;
+			background-color: white;
+			max-width: 600px;
+			width: 100%;
+			height: 2.5rem;
 			display: flex;
 			justify-content: space-between;
-			background-color: white;
 			div{
-				width: 50px;
-				height: 50px;
+				width: 2.5rem;
+				height: 2.5rem;
+				line-height:3rem; 
 				img{
-					margin-bottom: -30px;
-					width: 30px;
-					height:30px;
+					width: 1.5rem;
+					height:1.5rem;
 				}
 			}
 			.headline{
-				width: 160px;
-				height:40px;
-				line-height: 50px;
-				font-size: 30px;
+				width: 7rem;
+				height:2.5rem;
+				line-height: 2.5rem;
+				font-size: 1.3rem;
 				img{
-					width: 30px;
-					height: 30px;
-					margin-bottom: -5px;
-					margin-right: 10px;
+					width: 1.3rem;
+					height: 1.3rem;
+					margin-bottom: -0.25rem;
+					margin-right: 0.2rem;
 				}
+			}
+			.isSure{
+				height: 2rem;
+				width: 2rem;
 			}
 		}
 		section{
-			width: 700px;
-			margin-top: 5px;
+			max-width: 600px;
+			width: 90%;
+			padding-top: 3rem;
 			margin: auto;
 			div{
 				height: 60px;
 				font-size: 20px;
 				input{
 					background-color: white;
-					width: 600px;
-					height: 50px;
+					max-width: 600px;
+					height: 80%;
 					font-size: 20px;
 					margin-left:10px;
 					border:none;
@@ -89,12 +97,13 @@
 			}
 		}
 		footer{
-			width: 700px;
+			max-width: 600px;
+			width: 90%;
 			margin: auto;
 			input{
-				height: 50px;
-				width: 700px;
-				font-size: 30px;
+				height: 3rem;
+				width: 100%;
+				font-size: 1.5rem;
 				background-color: orange;
 				text-align: center;
 				color: white;
