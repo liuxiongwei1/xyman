@@ -240,6 +240,7 @@
 					display: flex;
 					width: 3.5rem;
 					line-height: 3rem;
+					font-size: 0.5rem;
 					img{
 						width: 1rem;
 						margin-right: .2rem;
@@ -248,6 +249,7 @@
 				}
 				.xuan+div{
 					div{
+						font-size: 0.8rem;
 						height: 50%;
 						line-height: 1.5rem;
 					}
