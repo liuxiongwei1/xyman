@@ -11,7 +11,6 @@
 				<div :style='{backgroundImage:m.img}'><!-- <img :src="m.imgs" alt=""> --></div>
 				<ul>
 					<li>{{m.title}}</li>
-					<li></li>
 					<li>数量：<input type="button"value='+':style='{display:buttonArise}' @click='addnum(m)'>{{m.num}}<input type="button"value='-':style='{display:buttonArise}' @click='reducenum(m)'><div class="delete" @click='deleted(m)' :style='{display:buttonArise}'>删除</div></li>
 					<li>&yen;{{m.newprice}}</li>
 				</ul>
@@ -216,7 +215,7 @@
 					}
 					&:nth-child(2){
 						width: 6rem;
-						height: 7rem;
+						height: 6rem;
 						line-height: 4rem;
 						margin-right: 0.2rem;
 						background-repeat: no-repeat;
@@ -226,7 +225,7 @@
 				}
 				ul{
 					margin: 0;
-					margin-top: 0.3rem;
+					margin-top: 0.8rem;
 					width: 100%;
 					list-style-type: none;
 					padding: 0;
