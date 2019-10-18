@@ -23,28 +23,31 @@
 </script>
 <style lang="less" scoped>
 	.collects{
-		width:600px;
+		max-width:600px;
+		width: 100%;
 		margin: auto;
 		article{
 			display: block;
-			width: 600px;
+			max-width: 600px;
+			width: 100%;
 			text-align: left;
-			margin-bottom: 50px;
+			margin-bottom: 3rem;
 			h4{
 				display: block;
 				text-align: left;
-				padding-left: 10px;
+				padding-left: 0.1rem;
 			}
-			div{
+			&>div{
+				width: 100%;
 				div{
-					margin-left: 10px;
-					text-align: center;
+					margin-left: 0.1rem;
 					display: inline-block;
-					width: 150px;
-					font-size: 16px;
+					text-align: center;
+					font-size: 0.5rem;
+					width: 8rem;
 					img{
-						width: 150px;
-						height: 150px;
+						width: 4rem;
+						height: 4rem;
 					}
 					p{
 						padding: 0;
