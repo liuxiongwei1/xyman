@@ -186,8 +186,8 @@
 				div{
 					&:first-child{
 						width: 1rem;
-						height: 4rem;
-						line-height: 4rem;
+						height: 6rem;
+						line-height: 6rem;
 						margin-right: 0.2rem;
 						img{
 							width: 1rem;
@@ -195,13 +195,13 @@
 						}
 					}
 					&:nth-child(2){
-						width: 4rem;
-						height: 4rem;
+						width: 5rem;
+						height: 6rem;
 						line-height: 4rem;
 						margin-right: 0.2rem;
 						img{
-							width: 3.5rem;
-							height: 4rem;
+							width: 5rem;
+							height: 6rem;
 						}
 					}
 				}
@@ -210,8 +210,8 @@
 					list-style-type: none;
 					padding: 0;
 					li{
-						font-size: 0.5rem;
-						height: 1rem;
+						font-size: 1rem;
+						height: 1.5rem;
 					}
 				}
 			}
