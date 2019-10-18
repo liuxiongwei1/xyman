@@ -9,7 +9,7 @@
 			<img src="/static/images/icogoods/1.jpg"alt="">
 			<div>
 				<div><img src="/static/images/icogoods/2.jpg" alt=""><b>R&O PLAY</b></div>
-				<input type="button" value="关注">
+				<input type="button" v-model="follow" @click='followed'>
 			</div>
 			<p>Bang & Olufsen 系列产品包括电视机、音乐系统、扬声器、电话机和多媒体产品等，每一款都独具特色、卓尔不群，堪称美学外观与卓越技术之完美融合。</p>
 			<ul>
@@ -26,6 +26,7 @@
 	export default{
 		data(){
 			return{
+				follow:'关注',
 				goods:[
 					{
 						imgs:'/static/images/icogoods/01.jpg',
@@ -87,6 +88,14 @@
 			}
 		},
 		methods:{
+			followed(){
+				console.log(1);
+				if(this.follow=='关注'){
+					this.follow='已关注'
+				}else{
+					this.follow='关注'
+				}
+			},
 			regret(){
 				history.back()
 			},
