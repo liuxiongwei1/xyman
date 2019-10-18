@@ -17,7 +17,7 @@
 			</div>
 			<section>
 				<div v-for='(m,n) in gInfors'>
-					<img :src="m.imgs" alt="">
+					<div :style='{backgroundImage:m.img}'></div>
 					<ul>
 						<li>{{m.title}}</li>
 						<li>数量：{{m.num}}</li>
@@ -89,6 +89,10 @@
 }
 </script>
 <style lang="less" scoped>
+	*{
+		margin: 0;
+		padding: 0;
+	}
 	.sureGoods{
 		max-width: 600px;
 		width: 100%;
@@ -128,7 +132,9 @@
 				width: 2rem;
 			}
 		}
-		section{
+		&>section{
+			width: 90%;
+			margin: auto;
 			margin-top: 2.5rem;
 			&>div{
 				display: flex;
@@ -143,8 +149,10 @@
 			}
 			h3{
 				font-size: 1.2rem;
+				margin-bottom: 1rem;
 			}
 			h3+div{
+				margin-bottom: 1rem;
 				div{
 					font-size: 0.4rem;
 					&:first-child{
@@ -162,15 +170,20 @@
 				div{
 					height: 4rem;
 					font-size: 1rem;
-					margin-top: .5rem;
-					margin-bottom: .5rem;
+					margin-top: 1rem;
+					margin-bottom: 1rem;
+					display: flex;
 					&:first-child{
 						height: 4rem;
 						font-size: 1rem;
 					}
-					img{
-						width: 4rem;
-						height: 4rem;
+					&>div{
+						margin: 0;
+						width: 5rem;
+						height: 5rem;
+						background-repeat: no-repeat;
+						background-size: 90%;
+						background-position: center;
 					}
 					ul{
 						display: inline-block;

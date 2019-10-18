@@ -32,6 +32,7 @@
 	</div>
 </template>
 <script>
+	// localStorage.clear()
 	export default{
 		data(){
 			return{
@@ -44,6 +45,18 @@
 		},
 		created(){
 			this.goodsinfor=JSON.parse(localStorage.getItem('shopping'));
+			var arr=JSON.parse(localStorage.getItem('shopping'));
+			var k=0;
+			this.allnum=0;
+			for(var a in arr){
+				if(arr[a].pitch==arr[a].pitch1){
+					k++
+					this.allnum+=arr[a].num*arr[a].newprice
+				}
+				if(k==arr.length){
+					this.all='/static/images/shopping/pitch.svg'
+				}
+			}
 		},
 		methods:{
 			regret(){
@@ -132,14 +145,20 @@
 						localStorage.setItem('buygoods',JSON.stringify(arr1));
 					}
 				}
-				open("http://localhost:8080/#/sureGoods","_self");
+				if(arr1.length){
+					open("http://localhost:8080/#/sureGoods","_self");
+				}
 			},
 			deleted(n){
-				this.allnum=0
 				for(var a in this.goodsinfor){
 					if(n.title==this.goodsinfor[a].title){
 						this.goodsinfor.splice(a,1);
 						localStorage.setItem('shopping',JSON.stringify(this.goodsinfor))
+					}
+				}
+				this.allnum=0;
+				for(var a in this.goodsinfor){
+					if(this.goodsinfor[a].pitch==this.goodsinfor[a].pitch1){
 						this.allnum+=this.goodsinfor[a].newprice*this.goodsinfor[a].num
 					}
 				}
@@ -199,7 +218,8 @@
 			width: 100%;
 			&>div{
 				padding: .2rem;
-				width: 100%;
+				width: 90%;
+				margin: auto;
 				display: flex;
 				background-color: #e7e7e7;
 				div{
@@ -230,7 +250,7 @@
 					list-style-type: none;
 					padding: 0;
 					li{
-						font-size: 1rem;
+						font-size: 0.8rem;
 						height: 1.5rem;
 						line-height: 1.5rem;
 						input{
