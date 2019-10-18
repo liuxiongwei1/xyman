@@ -117,12 +117,12 @@
 					if(n.num==0){
 						n.num=1
 					}else{
-						
+						if(n.pitch==n.pitch1){
+							this.allnum-=n.newprice*1
+						}
 					}
 				}
-				if(n.pitch==n.pitch1){
-					this.allnum-=n.newprice*1
-				}
+				
 			},
 			buygoods(){
 				var arr1=[];
@@ -220,7 +220,7 @@
 						line-height: 4rem;
 						margin-right: 0.2rem;
 						background-repeat: no-repeat;
-						background-size: 90%;
+						background-size: 95%;
 						background-position: center;
 					}
 				}

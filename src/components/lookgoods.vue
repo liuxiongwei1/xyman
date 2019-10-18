@@ -388,27 +388,26 @@
 		    },
 		    addshopping(){
 		    	this.goodsinformation.num=this.num;
+		    	console.log(this.num)
 		    	if(!localStorage.getItem('shopping')){
 		    		var arr=[];
 		    		arr.push(this.goodsinformation);
 		    		localStorage.setItem('shopping',JSON.stringify(arr));
 		    	}else{
 		    		var arr=JSON.parse(localStorage.getItem('shopping'));
-		    		console.log(arr)
-		    		if(arr.length==0){
-		    			arr.push(this.goodsinformation);
-		    		}
 		    		for(var a in arr){
 		    			console.log(a)
 		    			if(this.goodsinformation.imgs==arr[a].imgs){
 		    				arr[a].num+=this.goodsinformation.num
 		    				break
 		    			}else{
-		    				console.log(2)
 		    				if(a==arr.length-1){
 		    					arr.push(this.goodsinformation);
 		    				}
 		    			}
+		    		}
+		    		if(arr.length==0){
+		    			arr.push(this.goodsinformation);
 		    		}
 		    		localStorage.setItem('shopping',JSON.stringify(arr));
 		    	}
