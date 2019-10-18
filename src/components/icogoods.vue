@@ -16,7 +16,7 @@
 				<li to='/lookgoods' v-for='(m,n) in goods' :key='n' @click='toPay(m)'>
 					<div><img :src="m.imgs" alt=""></div>
 					<div>{{m.title}}</div>
-					<div class="goodsprice">{{m.newprice}}</div>
+					<div class="goodsprice">&yen;{{m.newprice}}</div>
 				</li>
 			</ul>
 		</section>
@@ -30,6 +30,7 @@
 				goods:[
 					{
 						imgs:'/static/images/icogoods/01.jpg',
+						img:'url(/static/images/icogoods/01.jpg)',
 						title:'耳机 米色',
 						newprice:'2198',
 						content:'纯粹又精湛的大师级作品',
@@ -44,6 +45,7 @@
 					},
 					{
 						imgs:'/static/images/icogoods/02.jpg',
+						img:'url(/static/images/icogoods/02.jpg)',
 						title:'耳机 自然灰色',
 						newprice:'1198',
 						content:'纯粹又精湛的大师级作品',
@@ -58,6 +60,7 @@
 					},
 					{
 						imgs:'/static/images/icogoods/03.jpg',
+						img:'url(/static/images/icogoods/03.jpg)',
 						title:'耳机 黑色',
 						newprice:'1498',
 						content:'纯粹又精湛的大师级作品',
@@ -72,6 +75,7 @@
 					},
 					{
 						imgs:'/static/images/icogoods/01.jpg',
+						img:'url(/static/images/icogoods/01.jpg)',
 						title:'耳机 米色',
 						newprice:'2198',
 						content:'纯粹又精湛的大师级作品',
@@ -119,6 +123,11 @@
 		width: 100%;
 		margin: auto;
 		header{
+			position: fixed;
+			background-color: white;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%);
 			max-width: 600px;
 			width: 100%;
 			height: 2rem;
@@ -149,6 +158,7 @@
 			max-width: 600px;
 			width: 100%;
 			margin: auto;
+			margin-top: 2.5rem;
 			img{
 				max-width: 600px;
 				width: 100%;
@@ -170,7 +180,8 @@
 					}
 				}
 				input{
-					margin-top: 10px;
+					margin-top: 0.7rem;
+					margin-right: 0.5rem;
 					border:none;
 					color: white;
 					background-color: #ffc619;
@@ -180,7 +191,7 @@
 			}
 			p{
 				color:#99acc9;
-				margin-top: 5px;
+				margin: 0.4rem;
 			}
 			ul{
 				margin: 0;

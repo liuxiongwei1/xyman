@@ -73,7 +73,7 @@
 		img{
 			width: 100%;
 			margin: 0;
-			margin-top: -5px;
+			margin-bottom: -0.25rem;
 		}
 		&>div{
 			width: 100%;
@@ -86,11 +86,11 @@
 			overflow: hidden;
 			div{
 				width: 30%;
-				height: 20px;
+				height: 5px;
 				text-align: center;
-				font-size: 20px;
-				margin-top:20px;
-				margin-bottom:20px;
+				font-size:1rem;
+				margin-top:0.5rem;
+				margin-bottom:1rem;
 			}
 		}
 	}

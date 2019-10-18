@@ -48,13 +48,17 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+    *{
+        margin: 0;
+        padding: 0;
+    }
   .helloWord{
     max-width: 600px;
     width: 100%;
     margin: auto;
     ul{
         position: fixed;
-        bottom:-1rem;
+        bottom:0;
         right: -50%;
         transform: translate(-50%);
         max-width: 600px;

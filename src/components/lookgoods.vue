@@ -92,7 +92,7 @@
 				</header>
 				<section class="goodssection">
 					<section>
-						<img :src="goodsinformation.imgs" alt="">
+						<div class="goodsimg" :style='{backgroundImage:goodsinformation.img}'></div>
 						<div>
 							<div>{{goodsinformation.title}}</div>
 							<div>已选</div>
@@ -123,6 +123,7 @@
 	localStorage.setItem('shoesgoods',JSON.stringify				(
 						{
 							imgs:'/static/images/home/1.jpg',
+							img:'url(/static/images/home/1.jpg)',
 							title:'Bowers & Wilkins C5 入耳式耳机',
 							content:'低音下潜惊人的耳机',
 							oldprice:'1028',
@@ -686,7 +687,8 @@
 			position: fixed;
 			width: 100%;
 			height: 100%;
-			right: 0;
+			left: 50%;
+			transform: translate(-50%);
 			top: 0;
 			overflow: hidden;
 			background-color: white;
@@ -725,20 +727,30 @@
 				}
 				.goodssection{
 					max-width:600px;
-					width: 100%;
+					width: 90%;
 					section{
-						img{
-							width: 4rem;
-							height: 5rem;
-							margin-right: 2rem;
+						.goodsimg{
+							display: inline-block;
+							max-width: 50rem;
+							width: 40%;
+							height: 8rem;
+							background-repeat:no-repeat;
+							background-size: 100%;
+							background-position: center;
 						}
-						img+div{
-							font-size: 1rem;
+						.goodsimg+div{
+							width: 57%;
 							display: inline-block;
 							margin-left:0.8;
+							font-size: 0.8rem;
 							div{
+								height:2rem;
+								line-height: 2rem;
 								&:nth-child(2){
 								color: orange;
+								}
+								&:first-child{
+									height: 4rem;
 							}
 							}
 							
@@ -783,11 +795,11 @@
 					background-color: white;
 					div{
 						&:first-child{
-							width: 40%;
+							width: 47%;
 							background-color:black;
 						}
 						&:last-child{
-							width: 40%;
+							width: 47%;
 							background-color: yellow;
 							color: #000000;
 						}

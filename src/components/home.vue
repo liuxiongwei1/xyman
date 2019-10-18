@@ -33,6 +33,7 @@
 	localStorage.setItem('goodsinformation',JSON.stringify([
 					{
 						imgs:'/static/images/home/1.jpg',
+						img:'url(/static/images/home/1.jpg)',
 						title:'Bowers & Wilkins C5 入耳式耳机',
 						content:'低音下潜惊人的耳机',
 						oldprice:'1028',
@@ -47,6 +48,7 @@
 					},
 					{
 						imgs:'/static/images/home/2.jpg',
+						img:'url(/static/images/home/2.jpg)',
 						title:'ISSEY MIYAKE三宅一生C系列计时腕表',
 						content:'纯粹又精湛的大师级作品',
 						oldprice:'2944',

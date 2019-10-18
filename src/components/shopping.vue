@@ -8,7 +8,7 @@
 		<section>
 			<div v-for='(m,n) in goodsinfor' class="buygoods">
 				<div @click='checkgoods(m)'><img :src="m.pitch" alt=""></div>
-				<div><img :src="m.imgs" alt=""></div>
+				<div :style='{backgroundImage:m.img}'><!-- <img :src="m.imgs" alt=""> --></div>
 				<ul>
 					<li>{{m.title}}</li>
 					<li></li>
@@ -61,10 +61,17 @@
 					this.allnum+=n.newprice*n.num
 				}
 				var arr=JSON.parse(localStorage.getItem('shopping'));
+				var k=0;
 				for(var a in arr){
 					if(n.imgs==arr[a].imgs){
 						arr[a].pitch=n.pitch;
 						localStorage.setItem('shopping',JSON.stringify(arr));
+					}
+					if(arr[a].pitch==arr[a].pitch1){
+						k++
+					}
+					if(k==arr.length){
+						this.all='/static/images/shopping/pitch.svg'
 					}
 				}	
 			},
@@ -99,13 +106,22 @@
 			},
 			addnum(n){
 				n.num++
+				if(n.pitch==n.pitch1){
+					this.allnum+=n.newprice*1
+				}
+					
 			},
 			reducenum(n){
 				if(n.num){
 					n.num--
 					if(n.num==0){
 						n.num=1
+					}else{
+						
 					}
+				}
+				if(n.pitch==n.pitch1){
+					this.allnum-=n.newprice*1
 				}
 			},
 			buygoods(){
@@ -120,10 +136,12 @@
 				open("http://localhost:8080/#/sureGoods","_self");
 			},
 			deleted(n){
+				this.allnum=0
 				for(var a in this.goodsinfor){
 					if(n.title==this.goodsinfor[a].title){
 						this.goodsinfor.splice(a,1);
 						localStorage.setItem('shopping',JSON.stringify(this.goodsinfor))
+						this.allnum+=this.goodsinfor[a].newprice*this.goodsinfor[a].num
 					}
 				}
 				
@@ -139,6 +157,8 @@
 		header{
 			position: fixed;
 			top: 0%;
+			left: 50%;
+			transform: translate(-50%);
 			background-color: white;
 			max-width: 600px;
 			width: 100%;
@@ -195,23 +215,29 @@
 						}
 					}
 					&:nth-child(2){
-						width: 5rem;
-						height: 6rem;
+						width: 6rem;
+						height: 7rem;
 						line-height: 4rem;
 						margin-right: 0.2rem;
-						img{
-							width: 5rem;
-							height: 6rem;
-						}
+						background-repeat: no-repeat;
+						background-size: 90%;
+						background-position: center;
 					}
 				}
 				ul{
 					margin: 0;
+					margin-top: 0.3rem;
+					width: 100%;
 					list-style-type: none;
 					padding: 0;
 					li{
 						font-size: 1rem;
 						height: 1.5rem;
+						line-height: 1.5rem;
+						input{
+							width: 1.5rem;
+							height: 1.5rem;
+						}
 					}
 				}
 			}
