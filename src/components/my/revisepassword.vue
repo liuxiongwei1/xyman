@@ -80,17 +80,17 @@
 		section{
 			max-width: 600px;
 			width: 90%;
-			padding-top: 3rem;
+			padding-top: 4rem;
 			margin: auto;
 			div{
-				height: 60px;
-				font-size: 20px;
+				height: 2rem;
+				font-size: 1rem;
 				input{
 					background-color: white;
 					max-width: 600px;
 					height: 80%;
-					font-size: 20px;
-					margin-left:10px;
+					font-size: 1rem;
+					margin-left:0.8rem;
 					border:none;
 					outline:none;
 				}
@@ -101,7 +101,8 @@
 			width: 90%;
 			margin: auto;
 			input{
-				height: 3rem;
+				margin-top: 1rem;
+				height: 2rem;
 				width: 100%;
 				font-size: 1.5rem;
 				background-color: orange;

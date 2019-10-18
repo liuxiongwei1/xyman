@@ -96,7 +96,7 @@
 			left: 50%;
 			transform: translate(-50%);
 			max-width: 600px;
-			width: 90%;
+			width: 95%;
 			height: 3rem;
 			display: flex;
 			justify-content: space-between;
@@ -210,8 +210,8 @@
 			left: 50%;
 			bottom:0px;
 			transform: translate(-50%);
-			max-width: 700px;
-			width: 90%;
+			max-width: 600px;
+			width: 95%;
 			height: 2rem;
 			color: orange;
 			text-align: center;

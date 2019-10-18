@@ -96,7 +96,7 @@
 					font-size: 20px;
 					max-width: 600px;
 					width: 100%;
-					height: 3rem;
+					height: 2rem;
 					text-align:center;
 				}
 				&:last-child input{
