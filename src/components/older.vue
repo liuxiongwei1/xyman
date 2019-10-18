@@ -12,7 +12,7 @@
 			<router-link tag='li' to='/older'>已完成</router-link>
 			<router-link tag='li' to='/older'>取消</router-link>
 		</ul>
-		<router-view/>
+		<footer><router-view/></footer>
 	</div>
 </template>
 <script>
@@ -34,7 +34,9 @@
     	margin: auto;
     	header{
 			position: fixed;
-			top: 0px;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%);
 			background-color: white;
 			max-width: 600px;
 			width: 100%;
@@ -51,7 +53,7 @@
 				}
 			}
 			.headline{
-				width: 8rem;
+				width: 6rem;
 				height:3rem;
 				line-height: 3rem;
 				font-size:1rem;
@@ -64,11 +66,13 @@
 			}
 		}
 		ul{
+			margin: 0;
+			padding: 0;
+			margin: auto;
 			margin-top: 3rem;
 			max-width: 600px;
 			width: 100%;
 			list-style-type: none;
-			padding: 0;
 			display: flex;
 			border-top:1px solid #cccccc;
 			border-bottom: 1px solid #cccccc; 
@@ -79,6 +83,10 @@
 				font-size: 1rem;
 				text-align: center;
 			}
+		}
+		footer{
+			max-width:600px;
+			width: 100%;
 		}
     }
 </style>

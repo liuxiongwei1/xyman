@@ -31,6 +31,8 @@
 		max-width: 600px;
 		width: 100%;
 		section{
+			max-width: 600px;
+			width: 100%;
 			margin-top: 1rem;
 			&>div{
 				max-width: 600px;
@@ -57,8 +59,9 @@
 					list-style-type: none;
 					padding: 0;
 					border: none;
+					font-size: 0.8rem;
 					li{
-						width:400px;
+						width:100%;
 						text-align: left;
 						border: none;
 					}
