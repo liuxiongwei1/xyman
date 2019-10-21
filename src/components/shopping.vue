@@ -147,6 +147,8 @@
 				}
 				if(arr1.length){
 					open("http://localhost:8080/#/sureGoods","_self");
+				}else{
+					alert('请选中商品')
 				}
 			},
 			deleted(n){
